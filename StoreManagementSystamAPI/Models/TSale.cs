@@ -7,7 +7,7 @@ namespace StoreManagementSystamAPI.Models
 {
     public partial class TSale
     {
-        public int Id { get; set; }
+        public int SaleId { get; set; }
         public int? CustomerId { get; set; }
         public int? ProductCategoryId { get; set; }
         public DateTime? PurchaseDate { get; set; }

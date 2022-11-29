@@ -12,7 +12,7 @@ namespace StoreManagementSystamAPI.Models
             TSales = new HashSet<TSale>();
         }
 
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string PhoneNo { get; set; }
         public string Email { get; set; }

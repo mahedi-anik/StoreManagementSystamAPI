@@ -61,7 +61,7 @@ namespace StoreManagementSystemAPI.Controllers
                     return BadRequest();
                 }
                 var AddNewSupplier = await supplierRepository.AddNewSupplier(supplier);
-                return CreatedAtAction(nameof(GetSupplier), new { id = supplier.Id }, AddNewSupplier);
+                return CreatedAtAction(nameof(GetSupplier), new { id = supplier.SupplierId }, AddNewSupplier);
             }
             catch (Exception)
             {
@@ -74,7 +74,7 @@ namespace StoreManagementSystemAPI.Controllers
         {
             try
             {
-                if (id != supplier.Id)
+                if (id != supplier.SupplierId)
                 {
                     return BadRequest("ID Mismatch");
                 }

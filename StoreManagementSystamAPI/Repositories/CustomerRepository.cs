@@ -24,7 +24,7 @@ namespace StoreManagementSystemAPI.Repositories
 
         public async Task<TCustomer> DeleteCustomer(int Id)
         {
-            var result = await dBContext.TCustomers.Where(a => a.Id == Id)
+            var result = await dBContext.TCustomers.Where(a => a.CustomerId == Id)
                 .FirstOrDefaultAsync();
             if (result != null)
             {
@@ -43,13 +43,13 @@ namespace StoreManagementSystemAPI.Repositories
         public async Task<TCustomer> GetCustomer(int Id)
         {
             return  await dBContext.TCustomers
-                .FirstOrDefaultAsync(a => a.Id == Id);
+                .FirstOrDefaultAsync(a => a.CustomerId == Id);
         }
 
         public async Task<TCustomer> UpdateCustomer(TCustomer customer)
         {
             var result=await dBContext.TCustomers
-                .FirstOrDefaultAsync(a => a.Id ==customer.Id);
+                .FirstOrDefaultAsync(a => a.CustomerId == customer.CustomerId);
             if(result!=null)
             {
                 result.CustomerName = customer.CustomerName;

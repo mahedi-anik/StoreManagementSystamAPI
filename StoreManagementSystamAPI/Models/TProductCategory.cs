@@ -14,7 +14,7 @@ namespace StoreManagementSystamAPI.Models
             TSales = new HashSet<TSale>();
         }
 
-        public int Id { get; set; }
+        public int ProductCategoryId { get; set; }
         public string ProductCategoryName { get; set; }
         public string ProductCategoryDescription { get; set; }
         public string EntryBy { get; set; }

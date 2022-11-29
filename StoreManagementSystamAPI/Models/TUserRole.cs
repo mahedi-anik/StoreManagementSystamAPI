@@ -13,7 +13,7 @@ namespace StoreManagementSystamAPI.Models
             TRolesMenus = new HashSet<TRolesMenu>();
         }
 
-        public int Id { get; set; }
+        public int UserRoleId { get; set; }
         public string RoleName { get; set; }
         public string Description { get; set; }
         public DateTime? EntryDate { get; set; }

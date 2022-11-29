@@ -60,7 +60,7 @@ namespace StoreManagementSystemAPI.Controllers
                     return BadRequest();
                 }
                 var AddNewCustomer = await customerRepository.AddNewCustomer(customer);
-                return CreatedAtAction(nameof(GetCustomer), new { id = customer.Id }, AddNewCustomer);
+                return CreatedAtAction(nameof(GetCustomer), new { id = customer.CustomerId }, AddNewCustomer);
             }
             catch (Exception)
             {
@@ -73,7 +73,7 @@ namespace StoreManagementSystemAPI.Controllers
         {
             try
             {
-                if(id!=customer.Id)
+                if(id!=customer.CustomerId)
                 {
                     return BadRequest("ID Mismatch");
                 }

@@ -59,7 +59,7 @@ namespace StoreManagementSystamAPI.Controllers
                     return BadRequest();
                 }
                 var AddNewShelf = await shelfRepository.AddNewShelf(shelf);
-                return CreatedAtAction(nameof(GetShelf), new { id = shelf.Id }, AddNewShelf);
+                return CreatedAtAction(nameof(GetShelf), new { id = shelf.ShelfId }, AddNewShelf);
             }
             catch (Exception)
             {
@@ -72,7 +72,7 @@ namespace StoreManagementSystamAPI.Controllers
         {
             try
             {
-                if(id!=shelf.Id)
+                if(id!=shelf.ShelfId)
                 {
                     return BadRequest("ID Mismatch");
                 }

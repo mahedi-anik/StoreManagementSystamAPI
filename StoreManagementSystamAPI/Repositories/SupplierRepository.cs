@@ -24,7 +24,7 @@ namespace StoreManagementSystemAPI.Repositories
 
         public async Task<TSupplier> deleteSupplier(int Id)
         {
-            var result = await dBContext.TSuppliers.Where(a => a.Id == Id)
+            var result = await dBContext.TSuppliers.Where(a => a.SupplierId == Id)
                 .FirstOrDefaultAsync();
             if(result!=null)
             {
@@ -42,12 +42,12 @@ namespace StoreManagementSystemAPI.Repositories
 
         public async Task<TSupplier> GetSupplier(int Id)
         {
-            return await dBContext.TSuppliers.FirstOrDefaultAsync(a => a.Id == Id);
+            return await dBContext.TSuppliers.FirstOrDefaultAsync(a => a.SupplierId == Id);
         }
 
         public async Task<TSupplier> UpdateSupplier(TSupplier supplier)
         {
-            var result = await dBContext.TSuppliers.FirstOrDefaultAsync(a => a.Id == supplier.Id);
+            var result = await dBContext.TSuppliers.FirstOrDefaultAsync(a => a.SupplierId == supplier.SupplierId);
             if(result!=null)
             {
                 result.SupplierName = supplier.SupplierName;

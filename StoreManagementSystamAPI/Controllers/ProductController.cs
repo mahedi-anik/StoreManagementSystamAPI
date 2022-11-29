@@ -60,7 +60,7 @@ namespace StoreManagementSystemAPI.Controllers
                     return BadRequest();
                 }
                 var AddNewProduct = await productRepository.AddNewProduct(product);
-                return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, AddNewProduct);
+                return CreatedAtAction(nameof(GetProduct), new { id = product.ProductId }, AddNewProduct);
             }
             catch (Exception)
             {
@@ -73,7 +73,7 @@ namespace StoreManagementSystemAPI.Controllers
         {
             try
             {
-                if(id!=product.Id)
+                if(id!=product.ProductId)
                 {
                     return BadRequest("ID Mismatch");
                 }

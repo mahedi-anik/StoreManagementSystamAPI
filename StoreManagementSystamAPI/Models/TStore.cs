@@ -7,7 +7,7 @@ namespace StoreManagementSystamAPI.Models
 {
     public partial class TStore
     {
-        public int Id { get; set; }
+        public int StoreId { get; set; }
         public string StoreName { get; set; }
         public byte[] Image { get; set; }
         public string Currency { get; set; }

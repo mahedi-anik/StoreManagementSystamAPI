@@ -24,7 +24,7 @@ namespace StoreManagementSystamAPI.Repositories
 
         public async Task<TShelf> DeleteShelf(int Id)
         {
-            var result = await dBContext.TShelves.Where(a => a.Id == Id)
+            var result = await dBContext.TShelves.Where(a => a.ShelfId == Id)
                 .FirstOrDefaultAsync();
             if(result!=null)
             {
@@ -43,13 +43,13 @@ namespace StoreManagementSystamAPI.Repositories
         public async Task<TShelf> GetShelf(int Id)
         {
             return await dBContext.TShelves
-                .FirstOrDefaultAsync(a => a.Id == Id);
+                .FirstOrDefaultAsync(a => a.ShelfId == Id);
         }
 
         public async Task<TShelf> UpdateShelf(TShelf shelf)
         {
             var result = await dBContext.TShelves
-                .FirstOrDefaultAsync(a => a.Id == shelf.Id);
+                .FirstOrDefaultAsync(a => a.ShelfId == shelf.ShelfId);
 
             if(result!=null)
             {

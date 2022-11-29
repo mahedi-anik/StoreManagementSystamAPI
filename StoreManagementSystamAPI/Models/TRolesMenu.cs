@@ -7,7 +7,7 @@ namespace StoreManagementSystamAPI.Models
 {
     public partial class TRolesMenu
     {
-        public int Id { get; set; }
+        public int RolesMenuId { get; set; }
         public int? RoleId { get; set; }
         public int? MenuId { get; set; }
         public DateTime? EntryDate { get; set; }

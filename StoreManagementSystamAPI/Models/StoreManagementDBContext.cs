@@ -47,7 +47,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Admin");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.UserId).HasColumnName("UserId");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(100)
@@ -75,7 +75,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Customer");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(100)
@@ -108,7 +108,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Menu");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.MenuId).HasColumnName("MenuID");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(50)
@@ -141,7 +141,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_PaymentMood");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.PaymentMoodId).HasColumnName("PaymentMoodID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(50)
@@ -156,7 +156,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Product");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
                 entity.Property(e => e.BatchNo)
                     .HasMaxLength(100)
@@ -202,7 +202,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_ProductCategory");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.ProductCategoryId).HasColumnName("ProductCategoryID");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(50)
@@ -223,7 +223,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Purchase");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.PurchaseId).HasColumnName("PurchaseID");
 
                 entity.Property(e => e.BatchNo)
                     .HasMaxLength(50)
@@ -278,7 +278,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_RolesMenu");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.RolesMenuId).HasColumnName("RolesMenuID");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(50)
@@ -305,7 +305,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Sales");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.SaleId).HasColumnName("SaleID");
 
                 entity.Property(e => e.BatchNo)
                     .HasMaxLength(50)
@@ -360,7 +360,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Shelf");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.ShelfId).HasColumnName("ShelfID");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(50)
@@ -381,7 +381,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Store");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.StoreId).HasColumnName("StoreID");
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(100)
@@ -414,7 +414,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_Supplier");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(100)
@@ -447,7 +447,7 @@ namespace StoreManagementSystamAPI.Models
             {
                 entity.ToTable("T_UserRole");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.UserRoleId).HasColumnName("UserRoleID");
 
                 entity.Property(e => e.Description)
                     .HasMaxLength(200)

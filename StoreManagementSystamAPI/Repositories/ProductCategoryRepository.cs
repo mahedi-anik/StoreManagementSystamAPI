@@ -24,7 +24,7 @@ namespace StoreManagementSystamAPI.Repositories
 
         public async Task<TProductCategory> DeleteProductCategory(int Id)
         {
-            var result = await dBContext.TProductCategories.Where(a => a.Id == Id)
+            var result = await dBContext.TProductCategories.Where(a => a.ProductCategoryId == Id)
                 .FirstOrDefaultAsync();
             if(result!=null)
             {
@@ -43,13 +43,13 @@ namespace StoreManagementSystamAPI.Repositories
         public async Task<TProductCategory> GetProductCategory(int Id)
         {
             return await dBContext.TProductCategories
-                .FirstOrDefaultAsync(a => a.Id == Id);
+                .FirstOrDefaultAsync(a => a.ProductCategoryId == Id);
         }
 
         public async Task<TProductCategory> UpdateProductCategory(TProductCategory productCategory)
         {
             var result = await dBContext.TProductCategories
-                .FirstOrDefaultAsync(a => a.Id == productCategory.Id);
+                .FirstOrDefaultAsync(a => a.ProductCategoryId == productCategory.ProductCategoryId);
 
             if(result!=null)
             {

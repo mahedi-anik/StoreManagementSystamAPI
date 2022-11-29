@@ -62,7 +62,7 @@ namespace StoreManagementSystamAPI.Controllers
                     return BadRequest();
                 }
                 var AddNewProductCategory = await productCategoryRepository.AddNewProductCategory(productCategory);
-                return CreatedAtAction(nameof(GetProductCategory), new { id = productCategory.Id }, AddNewProductCategory);
+                return CreatedAtAction(nameof(GetProductCategory), new { id = productCategory.ProductCategoryId }, AddNewProductCategory);
             }
             catch(Exception)
             {
@@ -76,7 +76,7 @@ namespace StoreManagementSystamAPI.Controllers
         {
             try
             {
-                if(id!=productCategory.Id)
+                if(id!=productCategory.ProductCategoryId)
                 {
                     return BadRequest("ID Mismatch");
                 }

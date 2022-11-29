@@ -12,7 +12,7 @@ namespace StoreManagementSystamAPI.Models
             TProducts = new HashSet<TProduct>();
         }
 
-        public int Id { get; set; }
+        public int ShelfId { get; set; }
         public string ShelfName { get; set; }
         public double? NumericNo { get; set; }
         public string ShelfDescription { get; set; }
