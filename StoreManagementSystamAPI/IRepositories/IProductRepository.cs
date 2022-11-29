@@ -1,4 +1,4 @@
-﻿using StoreManagementSystamAPI.Models;
+﻿using StoreManagementSystemAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

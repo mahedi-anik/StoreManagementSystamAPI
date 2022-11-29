@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StoreManagementSystamAPI.IRepositories;
-using StoreManagementSystamAPI.Models;
-using System;
+using StoreManagementSystemAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,8 +9,8 @@ namespace StoreManagementSystemAPI.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private readonly StoreManagementDBContext dBContext;
-        public CustomerRepository(StoreManagementDBContext context)
+        private readonly StoreManagementSoftwareDBContext dBContext;
+        public CustomerRepository(StoreManagementSoftwareDBContext context)
         {
             dBContext = context;
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace StoreManagementSystamAPI.Models
+namespace StoreManagementSystemAPI.Models
 {
     public partial class TRolesMenu
     {

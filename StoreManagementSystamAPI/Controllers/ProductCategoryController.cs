@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StoreManagementSystamAPI.IRepositories;
-using StoreManagementSystamAPI.Models;
+using StoreManagementSystemAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

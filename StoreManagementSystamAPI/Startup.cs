@@ -10,8 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using StoreManagementSystamAPI.IRepositories;
-using StoreManagementSystamAPI.Models;
 using StoreManagementSystamAPI.Repositories;
+using StoreManagementSystemAPI.Models;
 using StoreManagementSystemAPI.Repositories;
 using System;
 using System.Collections.Generic;
@@ -48,7 +48,7 @@ namespace StoreManagementSystamAPI
                 = new DefaultContractResolver());
 
             services.AddControllers();
-            services.AddDbContext<StoreManagementDBContext>(options =>
+            services.AddDbContext<StoreManagementSoftwareDBContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             services.AddScoped<IShelfRepository, ShelfRepository>();
             services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();

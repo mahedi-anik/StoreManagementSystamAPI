@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StoreManagementSystamAPI.IRepositories;
-using StoreManagementSystamAPI.Models;
+using StoreManagementSystemAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,8 @@ namespace StoreManagementSystamAPI.Repositories
 {
     public class ShelfRepository : IShelfRepository
     {
-        private readonly StoreManagementDBContext dBContext;
-        public ShelfRepository(StoreManagementDBContext context)
+        private readonly StoreManagementSoftwareDBContext dBContext;
+        public ShelfRepository(StoreManagementSoftwareDBContext context)
         {
             dBContext = context;
         }

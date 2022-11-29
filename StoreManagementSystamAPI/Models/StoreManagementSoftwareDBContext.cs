@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace StoreManagementSystamAPI.Models
+namespace StoreManagementSystemAPI.Models
 {
-    public partial class StoreManagementDBContext : DbContext
+    public partial class StoreManagementSoftwareDBContext : DbContext
     {
-        public StoreManagementDBContext()
+        public StoreManagementSoftwareDBContext()
         {
         }
 
-        public StoreManagementDBContext(DbContextOptions<StoreManagementDBContext> options)
+        public StoreManagementSoftwareDBContext(DbContextOptions<StoreManagementSoftwareDBContext> options)
             : base(options)
         {
         }
@@ -35,7 +35,7 @@ namespace StoreManagementSystamAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-4P7AU8H\\SQLEXPRESS01;Database=StoreManagementDB;Trusted_Connection=True;User ID=Jait;Password=jaiT");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-1BHR44E\\SQLEXPRESS;Database=StoreManagementSoftwareDB;Trusted_Connection=True;User ID=mahedi_anik;Password=221154;");
             }
         }
 
@@ -45,9 +45,12 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TAdmin>(entity =>
             {
+                entity.HasKey(e => e.UserId)
+                    .HasName("PK_Admin");
+
                 entity.ToTable("T_Admin");
 
-                entity.Property(e => e.UserId).HasColumnName("UserId");
+                entity.Property(e => e.UserId).HasColumnName("UserID");
 
                 entity.Property(e => e.EntryBy)
                     .HasMaxLength(100)
@@ -73,6 +76,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TCustomer>(entity =>
             {
+                entity.HasKey(e => e.CustomerId);
+
                 entity.ToTable("T_Customer");
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
@@ -106,6 +111,9 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TMenu>(entity =>
             {
+                entity.HasKey(e => e.MenuId)
+                    .HasName("PK_Menu");
+
                 entity.ToTable("T_Menu");
 
                 entity.Property(e => e.MenuId).HasColumnName("MenuID");
@@ -139,6 +147,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TPaymentMood>(entity =>
             {
+                entity.HasKey(e => e.PaymentMoodId);
+
                 entity.ToTable("T_PaymentMood");
 
                 entity.Property(e => e.PaymentMoodId).HasColumnName("PaymentMoodID");
@@ -154,6 +164,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TProduct>(entity =>
             {
+                entity.HasKey(e => e.ProductId);
+
                 entity.ToTable("T_Product");
 
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
@@ -200,6 +212,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TProductCategory>(entity =>
             {
+                entity.HasKey(e => e.ProductCategoryId);
+
                 entity.ToTable("T_ProductCategory");
 
                 entity.Property(e => e.ProductCategoryId).HasColumnName("ProductCategoryID");
@@ -221,6 +235,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TPurchase>(entity =>
             {
+                entity.HasKey(e => e.PurchaseId);
+
                 entity.ToTable("T_Purchase");
 
                 entity.Property(e => e.PurchaseId).HasColumnName("PurchaseID");
@@ -276,6 +292,9 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TRolesMenu>(entity =>
             {
+                entity.HasKey(e => e.RolesMenuId)
+                    .HasName("PK_RolesMenu");
+
                 entity.ToTable("T_RolesMenu");
 
                 entity.Property(e => e.RolesMenuId).HasColumnName("RolesMenuID");
@@ -303,6 +322,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TSale>(entity =>
             {
+                entity.HasKey(e => e.SaleId);
+
                 entity.ToTable("T_Sales");
 
                 entity.Property(e => e.SaleId).HasColumnName("SaleID");
@@ -358,6 +379,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TShelf>(entity =>
             {
+                entity.HasKey(e => e.ShelfId);
+
                 entity.ToTable("T_Shelf");
 
                 entity.Property(e => e.ShelfId).HasColumnName("ShelfID");
@@ -379,6 +402,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TStore>(entity =>
             {
+                entity.HasKey(e => e.StoreId);
+
                 entity.ToTable("T_Store");
 
                 entity.Property(e => e.StoreId).HasColumnName("StoreID");
@@ -412,6 +437,8 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TSupplier>(entity =>
             {
+                entity.HasKey(e => e.SupplierId);
+
                 entity.ToTable("T_Supplier");
 
                 entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
@@ -445,6 +472,9 @@ namespace StoreManagementSystamAPI.Models
 
             modelBuilder.Entity<TUserRole>(entity =>
             {
+                entity.HasKey(e => e.UserRoleId)
+                    .HasName("PK_UserRole");
+
                 entity.ToTable("T_UserRole");
 
                 entity.Property(e => e.UserRoleId).HasColumnName("UserRoleID");
